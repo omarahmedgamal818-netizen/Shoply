@@ -1,26 +1,117 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+/* Tokens from DESIGN (2).md. Inter stands in for GT Standard and Shopify Sans. */
+
+@theme {
+  --color-canvas-mist: #f2f4f5;
+  --color-pure-white: #ffffff;
+  --color-ink-black: #000000;
+  --color-faint-border: #ebebeb;
+  --color-muted-gray: #787574;
+  --color-cool-stone: #cccccc;
+  --color-warm-fog: #acb0aa;
+  --color-shop-violet: #5433eb;
+  --color-violet-wash: #c0b5f3;
+  --color-slate-ink: #332f2d;
+  --color-ash-veil: #665a54;
+
+  --color-primary: #5433eb;
+  --color-primary-hover: #4524db;
+  --color-primary-active: #3b1ed0;
+  --color-secondary: #000000;
+  --color-tertiary: #000000;
+  --color-background: #f2f4f5;
+  --color-surface: #ffffff;
+  --color-ink: #000000;
+  --color-muted: #787574;
+  --color-line: #ebebeb;
+  --color-success: #000000;
+  --color-warning: #787574;
+  --color-error: #000000;
+
+  --font-sans: var(--font-inter), "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-inter), "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-inter), "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-gt-standard: var(--font-inter), "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-shopify-sans: var(--font-inter), "Inter", ui-sans-serif, system-ui, sans-serif;
+
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 600;
+  --font-weight-extrabold: 600;
+  --font-weight-black: 600;
+
+  --text-display: 20px;
+  --text-display--line-height: 1.2;
+  --text-display--letter-spacing: -0.05em;
+  --text-display--font-weight: 600;
+  --text-headline: 20px;
+  --text-headline--line-height: 1.2;
+  --text-headline--letter-spacing: -0.05em;
+  --text-headline--font-weight: 600;
+  --text-subhead: 16px;
+  --text-subhead--line-height: 1.33;
+  --text-subhead--letter-spacing: -0.031em;
+  --text-subhead--font-weight: 600;
+  --text-body-lg: 16px;
+  --text-body-lg--line-height: 1.33;
+  --text-body-lg--letter-spacing: -0.031em;
+  --text-body: 14px;
+  --text-body--line-height: 1.33;
+  --text-body--letter-spacing: -0.014em;
+  --text-body-sm: 12px;
+  --text-body-sm--line-height: 1.33;
+  --text-body-sm--letter-spacing: -0.017em;
+  --text-caption: 11px;
+  --text-caption--line-height: 1.33;
+  --text-overline: 11px;
+  --text-overline--line-height: 1.33;
+  --text-overline--letter-spacing: -0.017em;
+  --text-overline--font-weight: 500;
+
+  --radius-sm: 12px;
+  --radius-md: 20px;
+  --radius-lg: 28px;
+  --radius-xl: 28px;
+  --radius-cards: 28px;
+  --radius-full: 9999px;
+
+  --shadow-sm: rgba(0, 0, 0, 0.06) 0px 2px 8px 0px;
+  --shadow-sm-2: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.1) 0px 2px 4px -2px;
+  --shadow-lg: rgba(0, 0, 0, 0.12) 0px 4px 24px 0px;
+  --shadow-lg-2: rgba(69, 36, 219, 0.34) 0px 4px 24px 0px;
+  --shadow-subtle: rgba(0, 0, 0, 0.06) 0px 2px 8px 0px;
+  --shadow-medium: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.1) 0px 2px 4px -2px;
+  --shadow-large: rgba(0, 0, 0, 0.12) 0px 4px 24px 0px;
+  --shadow-product: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.1) 0px 2px 4px -2px;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  background: var(--color-canvas-mist);
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--color-canvas-mist);
+  color: var(--color-ink-black);
+  font-family: var(--font-gt-standard);
+  font-weight: 400;
+  letter-spacing: -0.031em;
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--font-gt-standard);
+  font-weight: 600;
+  letter-spacing: -0.05em;
+}
+
+@keyframes shoply-slide-progress {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
 }
